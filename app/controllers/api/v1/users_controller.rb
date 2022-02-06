@@ -34,7 +34,7 @@ module Api
             end
 
             def destroy
-                user = User.find_by(username: params[:username])
+                user = User.find_by(id: params[:id])
 
                 if user.destroy
                     head :no_content
@@ -46,7 +46,7 @@ module Api
             private
 
             def user_params
-                params.require(:user).permit(:username, :display_name, :icon, :wallet)
+                params.require(:user).permit(:username, :display_name, :icon, :wallet, :password_digest)
             end
 
             def options

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-    has_many :pressings, through: :coins
+    has_secure_password
+    has_many :pressings
     has_many :coins, dependent: :destroy
     validates :username, uniqueness: true
     validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }

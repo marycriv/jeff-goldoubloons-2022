@@ -3,13 +3,15 @@ module Api
         class CoinsController < ApplicationController
             protect_from_forgery with: :null_session
             def create
-                coin = Coin.new(coin_params)
+                @coin = Coin.new(coin_params)
 
                 if coin.save 
+                    redirect_to users_path
                     render json: CoinSerializer.new(coin).serializable_hash.to_json
                 else
                     render json: { error: coin.errors.messages}, status: 422
                 end
+                
             end
 
             def destroy

@@ -2,6 +2,11 @@ module Api
     module V1 
         class CoinsController < ApplicationController
             protect_from_forgery with: :null_session
+            def index
+                coins = Coin.all
+                render json: CoinSerializer.new(coins).serializable_hash.to_json
+            end
+
             def create
                 coin = Coin.new(coin_params)
 
@@ -25,7 +30,7 @@ module Api
 
             private
             def coin_params
-                params.require(:coin).permit(:pressing_id, :user_id)
+                params.require(:coin).permit(:pressing_id, :user_id, :for_sale)
             end
         end
     end

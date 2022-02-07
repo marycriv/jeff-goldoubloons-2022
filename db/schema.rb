@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_02_05_214817) do
   create_table "coins", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "pressing_id", null: false
+    t.boolean "for_sale"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pressing_id"], name: "index_coins_on_pressing_id"

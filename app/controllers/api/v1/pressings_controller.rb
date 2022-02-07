@@ -46,7 +46,7 @@ module Api
             private
 
             def pressing_params
-                params.require(:pressing).permit(:name, :image_url, :description)
+                params.require(:pressing).permit(:name, :image_url, :description, :rarity, :cost)
             end
 
             def options

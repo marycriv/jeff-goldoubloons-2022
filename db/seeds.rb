@@ -267,16 +267,24 @@ puts "Creating new coins"
 
 coins = Coin.create([
     {
-        user_id: users.first,
-        pressing: pressings.first
+        pressing_id: pressings[0].id,
+        user_id: users[0].id,
+        for_sale: true
     },
     {
-        user_id: users.first,
-        pressing: pressings.first
+        pressing_id: pressings[1].id,
+        user_id: users[0].id,
+        for_sale: true
     },
     {
-        user_id: users.first,
-        pressing: pressings.first
+        pressing_id: pressings[2].id,
+        user_id: users[0].id,
+        for_sale: false
+    },
+    {
+        pressing_id: pressings[26].id,
+        user_id: users[1].id,
+        for_sale: true
     }
 ])
 

@@ -78,7 +78,7 @@ pressings = Pressing.create([
         cost: 7
     },
     {
-        name: "sexy goldblum", 
+        name: "handsome goldblum", 
         description: "A Golddoubloon of Jeff Goldblum from the movie <i>Earth Girls are Easy</i>. This Golddoubloon is extremely rare.", 
         image_url: "/assets/2.gif", 
         rarity: 1,
@@ -258,6 +258,13 @@ pressings = Pressing.create([
         image_url: "/assets/27.gif", 
         rarity: 3,
         cost: 7
+    },
+    {
+        name: "glee goldblum",
+        description: "A Golddoubloon of Jeff Goldblum from the TV show <i>Glee</i>. This Golddoubloon is extremely rare.", 
+        image_url: "/assets/28.gif", 
+        rarity: 2,
+        cost: 8
     }
 ])
 
@@ -272,19 +279,14 @@ coins = Coin.create([
         for_sale: true
     },
     {
-        pressing_id: pressings[1].id,
+        pressing_id: pressings[3].id,
         user_id: users[0].id,
         for_sale: true
     },
     {
-        pressing_id: pressings[2].id,
+        pressing_id: pressings[5].id,
         user_id: users[0].id,
         for_sale: false
-    },
-    {
-        pressing_id: pressings[26].id,
-        user_id: users[1].id,
-        for_sale: true
     }
 ])
 

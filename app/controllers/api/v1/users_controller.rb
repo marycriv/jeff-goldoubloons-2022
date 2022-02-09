@@ -46,7 +46,7 @@ module Api
             private
 
             def user_params
-                params.require(:user).permit(:username, :display_name, :icon, :wallet, :password_digest)
+                params.require(:user).permit(:username, :display_name, :icon, :wallet, :password)
             end
 
             def options

@@ -8,7 +8,8 @@ module Api
                 login!
                 render json: {
                     logged_in: true,
-                    user: @user
+                    user: @user,
+                    relationships: @user.coins
                 }
                 else
                 render json: { 
@@ -22,7 +23,8 @@ module Api
                 if logged_in? && current_user
                 render json: {
                     logged_in: true,
-                    user: current_user
+                    user: current_user,
+                    relationships: current_user.coins
                 }
                 else
                 render json: {
@@ -45,7 +47,6 @@ module Api
             def session_params
                 params.require(:user).permit(:username, :password)
             end
-
         end
     end
 end

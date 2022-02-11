@@ -1,6 +1,6 @@
 class Pressing < ApplicationRecord
-    has_many :users
-    has_many :coins
+    has_many :users, -> { order('id') }
+    has_many :coins, -> { order('id') }
 
     before_create :slugify
     

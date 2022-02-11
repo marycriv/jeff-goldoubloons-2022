@@ -8,7 +8,7 @@ module Api
             end
 
             def show
-                user = User.find_by(username: params[:username])
+                user = User.find_by(id: params[:id])
 
                 render json: UserSerializer.new(user, options).serializable_hash.to_json
             end
@@ -24,7 +24,7 @@ module Api
             end
 
             def update
-                user = User.find_by(username: params[:username])
+                user = User.find_by(id: params[:id])
 
                 if user.update(user_params)
                     render json: UserSerializer.new(user, options).serializable_hash.to_json

@@ -1,10 +1,9 @@
 class User < ApplicationRecord
     has_secure_password
-    has_many :pressings
-    has_many :coins, dependent: :destroy
+    has_many :pressings, -> { order('id') }
+    has_many :coins, -> { order('id') }
     validates :username, uniqueness: true
     validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
-    validates :password, length: { minimum: 6 }, allow_nil: true
 
     def coin_create
         self.update(wallet: self.wallet - 10)

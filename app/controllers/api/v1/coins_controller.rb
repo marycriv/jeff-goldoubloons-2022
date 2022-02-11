@@ -3,7 +3,7 @@ module Api
         class CoinsController < ApplicationController
             protect_from_forgery with: :null_session
             def index
-                coins = Coin.all
+                coins = Coin.all.order(:id)
                 render json: CoinSerializer.new(coins).serializable_hash.to_json
             end
 
@@ -11,11 +11,24 @@ module Api
                 coin = Coin.new(coin_params)
 
                 if coin.save 
-                    render json: CoinSerializer.new(coin).serializable_hash.to_json
+                    coins = Coin.all.order(:id)
+                    coins_json = CoinSerializer.new(coins).serializable_hash.to_json
+                    render json: coins_json
+                    # render json: CoinSerializer.new(coin).serializable_hash.to_json
                 else
                     render json: { error: coin.errors.messages}, status: 422
                 end
                 
+            end
+
+            def update
+                coin = Coin.find_by(id: params[:id])
+
+                if coin.update(coin_params)
+                    render json: CoinSerializer.new(coin).serializable_hash.to_json
+                else
+                    render json: {error: coin.errors.messages}, status: 422
+                end
             end
 
             def destroy

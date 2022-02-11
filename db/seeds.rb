@@ -279,15 +279,41 @@ coins = Coin.create([
         for_sale: true
     },
     {
-        pressing_id: pressings[3].id,
+        pressing_id: pressings[1].id,
         user_id: users[0].id,
         for_sale: true
     },
     {
-        pressing_id: pressings[5].id,
+        pressing_id: pressings[2].id,
+        user_id: users[0].id,
+        for_sale: true
+    },
+    {
+        pressing_id: pressings[3].id,
         user_id: users[0].id,
         for_sale: false
+    },
+    {
+        pressing_id: pressings[4].id,
+        user_id: users[0].id,
+        for_sale: false
+    },
+    {
+        pressing_id: pressings[5].id,
+        user_id: users[1].id,
+        for_sale: true
+    },
+    {
+        pressing_id: pressings[6].id,
+        user_id: users[1].id,
+        for_sale: true
+    },
+    {
+        pressing_id: pressings[7].id,
+        user_id: users[1].id,
+        for_sale: true
     }
+    
 ])
 
 puts "Coins created"

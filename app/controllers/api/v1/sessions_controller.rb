@@ -7,6 +7,7 @@ module Api
                 if @user && @user.authenticate(session_params[:password])
                 login!
                 render json: {
+                    status: 200,
                     logged_in: true,
                     user: @user,
                     relationships: @user.coins
@@ -22,6 +23,7 @@ module Api
             def is_logged_in?
                 if logged_in? && current_user
                 render json: {
+                    status: 200,
                     logged_in: true,
                     user: current_user,
                     relationships: current_user.coins

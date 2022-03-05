@@ -18,7 +18,7 @@ users = User.create([
     {
         username: "mike",
         display_name: "mike stoklasa",
-        icon: "https://pics.me.me/thumb_ertrn-mike-stoklasa-tumblr-50943003.png",
+        icon: "mike.png",
         admin: true,
         password: "password",
         wallet: 100000
@@ -26,7 +26,7 @@ users = User.create([
     {
         username: "rich",
         display_name: "rich evans",
-        icon: "https://pbs.twimg.com/media/EsgocnsXYAAuqWN.png",
+        icon: "rich.png",
         admin: true,
         password: "password",
         wallet: 10000
@@ -34,7 +34,7 @@ users = User.create([
     {
         username: "jay",
         display_name: "jay bauman",
-        icon: "https://secure.gravatar.com/avatar/2a504b9358c94b5bd3703dcc43991a4c?rating=PG&size=1000&border=&default=https%3A%2F%2Fs.ltrbxd.com%2Fstatic%2Fimg%2Favatar1000.a71b6e9c.png",
+        icon: "jay.png",
         admin: true,
         password: "password",
         wallet: 10000
@@ -42,7 +42,7 @@ users = User.create([
     {
         username: "mac",
         display_name: "mac the intern",
-        icon: "https://perezhilton.com/wp-content/uploads/2020/06/Macaulay-Culkin-2020.jpg",
+        icon: "mac.png",
         admin: false,
         password: "password",
         wallet: 10000
@@ -50,7 +50,7 @@ users = User.create([
     {
         username: "plinkett",
         display_name: "mr. plinkett",
-        icon: "https://styles.redditmedia.com/t5_2tuot/styles/communityIcon_pvsy0fydp5p61.png",
+        icon: "plinkett.png",
         admin: false,
         password: "password",
         wallet: 0
@@ -58,7 +58,7 @@ users = User.create([
     {
         username: "len",
         display_name: "len kabasinski",
-        icon: "https://static.wikia.nocookie.net/rlm/images/7/70/Len.jpg/revision/latest?cb=20201221220140",
+        icon: "len.png",
         admin: false,
         password: "password",
         wallet: 1000
